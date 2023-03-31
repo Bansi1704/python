@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+			function checkfname() 
+		{
+			var f=document.frm.fname.value;
+			if (f=="") 
+			{
+				document.getElementById("fname").innerHTML="Please Enter Your Name";
+			}
+			else
+			{
+				document.getElementById("fname").innerHTML="";
+			}
+		}
+		function checklname() 
+		{
+			var f=document.frm.lname.value;
+			if (f=="") 
+			{
+				document.getElementById("lname").innerHTML="Please Enter Last Your Name";
+			}
+			else
+			{
+				document.getElementById("lname").innerHTML="";
+			}
+		}
+		function checkemail() 
+		{
+			var f=document.frm.email.value;
+			if (f=="") 
+			{
+				document.getElementById("email").innerHTML="Please Enter Your email id";
+			}
+			else
+			{
+				document.getElementById("email").innerHTML="";
+			}
+		}
+		function checkmobile() 
+		{
+			var f=document.frm.mobile.value;
+			if (f=="") 
+			{
+				document.getElementById("mobile").innerHTML="Please Enter Your mobile numer";
+			}
+			else
+			{
+				document.getElementById("mobile").innerHTML="";
+			}
+		}
+		function checkaddress() 
+		{
+			var f=document.frm.address.value;
+			if (f=="") 
+			{
+				document.getElementById("address").innerHTML="Please Enter Your address";
+			}
+			else
+			{
+				document.getElementById("email").innerHTML="";
+			}
+		}
+		function checkgender() 
+		{
+			var f=document.frm.gender.value;
+			if (f=="") 
+			{
+				document.getElementById("gender").innerHTML="Please select your gender";
+			}
+			else
+			{
+				document.getElementById("gender").innerHTML="";
+			}
+		}
+		function checkresume() 
+		{
+			var f=document.frm.resume.value;
+			if (f=="") 
+			{
+				document.getElementById("resume").innerHTML="Please attach your resume";
+			}
+			else
+			{
+				document.getElementById("resume").innerHTML="";
+			}
+		}
+		function checkbirthdate() 
+		{
+			var f=document.frm.birthdate.value;
+			if (f=="") 
+			{
+				document.getElementById("birthdate").innerHTML="Please select your birth date";
+			}
+			else
+			{
+				document.getElementById("birthdate").innerHTML="";
+			}
+		}
+		function checkPassword()
+		{
+			var f=document.frm.password.value;
+			var reg=/^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+			if(f=="")
+			{
+				document.getElementById("password").innerHTML="Please Enter Password";
+			}
+			
+			else if(!reg.test(f))
+			{
+				document.getElementById("password").innerHTML="Min 1 Upper, Min 1 Lower, Digit & Special Character(8,15)";
+			}
+			else
+			{
+				document.getElementById("password").innerHTML="";
+			}
+		}
+		function checkCPassword() 
+		{
+			var p1=document.frm.password.value;
+			var p2=document.frm.cpassword.value;
+			if (p2=="") 
+			{
+				document.getElementById("cpassword").innerHTML="Please Enter comfirm password";
+			}
+			else if(p1!=p2)
+			{
+				document.getElementById("cpassword").innerHTML="Password & confirm password does not matched";
+			}
+			else
+			{
+				document.getElementById("cpassword").innerHTML="";
+			}
+		}
+	</script>
+</head>
+<body>
+ <form method="post" action="" name="frm">
+ 	<table cellpadding="3px" cellspacing="3px">
+ 		<tr>
+ 			<td>First Name</td>
+ 			<td><input type="text" name="fname" onblur="checkfname();"></td>
+ 			<td><span id="fname"></span></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Last Name</td>
+ 			<td><input type="text" name="lname" onblur="checklname();"></td>
+ 			<td><span id="lname"></span></td>
+ 		</tr>
+ 		<tr>
+
+ 			<td>Email</td>
+ 			<td><input type="text" name="email" onblur="checkemail();"></td>
+ 			<td><span id="email"></span></td>
+
+ 		</tr>
+ 		<tr>
+ 			<td>Mobile</td>
+ 			<td><input type="text" name="mobile" onblur="checkmobile();"></td>
+ 			<td><span id="mobile"></span></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Address</td>
+ 			<td><textarea name="address" rows="5" cols="21" onblur="checkaddress();"></textarea></td>
+ 			<td><span id="address"></span></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Gender</td>
+ 			<td>
+ 				<input type="radio" name="gender" value="male" onblur="checkgender();">Male 
+ 				<input type="radio" name="gender" value="female" onblur="checkgender();">Female
+ 			</td>
+ 			<td>
+ 				<span id="gender"></span>
+ 			</td>
+ 		</tr>
+ 		<tr>
+ 			<td>Hobby</td>
+ 			<td>
+ 				<input type="checkbox" name="hobby" value="music">Music<br>
+ 				<input type="checkbox" name="hobby" value="Watching movies">Watching movies<br>
+ 				<input type="checkbox" name="hobby" value="Travelling">Trvelling<br>
+ 				<input type="checkbox" name="hobby" value="Dancing">Dancing<br>
+ 				<input type="checkbox" name="hobby" value="Reading">Reading<br>
+ 			</td>
+ 		</tr>
+ 		<tr>
+ 			<td>Education</td>
+ 			<td>
+ 				<select name="education">
+ 					<option>---Select Education---</option>
+ 					<option value="10th">10th</option>
+ 					<option value="12th">12th</option>
+ 					<option value="BCA">BCA</option>
+ 					<option value="BBA">BBA</option>
+ 					<option value="BE">BE</option>
+ 					<option value="MCA">MCA</option>
+ 					<option value="MBA">MBA</option>
+ 					<option value="ME">ME</option>
+ 				</select>
+ 			</td>
+ 		</tr>
+ 		<tr>
+ 			<td>Resume</td>
+ 			<td><input type="file" name="resume" onblur="checkresume();"></td>
+ 			<td><span id="resume"></span></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Birth Date</td>
+ 			<td><input type="date" name="birthdate" onblur="checkbirthdate();"></td>
+ 			<td><span id="birthdate"></span></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Password</td>
+ 			<td><input type="password" name="password" onblur="checkPassword();"></td>
+ 			<td><span id="password"></span></td>
+ 		</tr>
+ 		<tr>
+ 			<td>Confirm Password</td>
+ 			<td><input type="password" name="cpassword" onblur="checkCPassword();"></td>
+ 			<td><span id="cpassword"></span></td>
+ 		</tr>
+ 		<tr>
+ 			<td colspan="2" align="center">
+ 			<input type="submit" value="Register"></td>
+ 		</tr>
+ 	</table>
+ </form>
+</body>
+</html>
